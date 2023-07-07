@@ -8,8 +8,15 @@
     --md: 16px;
     --lg: 18px;
   }
-  body {
+* {
     margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+  body {
     font-family: 'Quicksand', sans-serif;
   }
   nav {
