@@ -28,5 +28,5 @@ function toggleIconCarrito() {
     //     mobileMenu.classList.add("inactive");
     // }
     menuCarritoIcon.classList.toggle('inactive');
-    desktopMenu.classList.add("inactive");
+    mobileMenu.classList.add("inactive");
 }
