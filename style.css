@@ -180,11 +180,11 @@
     box-shadow: -5px 5px 10px var(--very-light-pink);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    background-color: var(--white);
   }
   /*shoppingCartContainer*/
   #shoppingCartContainer {
     padding: 10px 24px;
-    background-color: var(--white);
   }
   /*estilos de ShoppingCart*/
   .title-container {
@@ -358,6 +358,16 @@
     margin-bottom: 0;
     color: var(--very-light-pink);
   }
+  /*efecto hover*/
+  .desktop-menu li:hover {
+    color: var(--hospital-green);
+    transition: 0.1s linear;
+  }
+  .desktop-menu li:last-child a:hover {
+    color: red;
+    transition: 0.1s linear;
+  }
+  
   @media (max-width: 640px) {
     .menu {
       display: block;

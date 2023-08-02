@@ -4,25 +4,42 @@ const desktopMenu = document.querySelector('.desktop-menu');
 //* variables para la vista mobile
 const iconMenuMobile = document.querySelector('.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
+const productDetailCloseIcon = document.querySelector('.product-detail-close');
 //* variables para la option del carrito de compras
 const iconCarrito = document.querySelector('.navbar-shopping-cart');
 const shoppingCartContainer = document.querySelector('#shoppingCartContainer');
 const cardsContainer = document.querySelector('.cards-container');
+const productDetailContainer = document.querySelector('#productDetail');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 iconMenuMobile.addEventListener('click', toggleMobileMenu);
 iconCarrito.addEventListener('click', toggleIconCarrito);
+productDetailCloseIcon.addEventListener('click', closeProductDetailAside);
 
 function toggleDesktopMenu() {
-    shoppingCartContainer.classList.add("inactive");
     desktopMenu.classList.toggle('inactive');
+    shoppingCartContainer.classList.add("inactive");
+    productDetailContainer.classList.add("inactive");
 }
 function toggleMobileMenu() {
     mobileMenu.classList.toggle('inactive');
+    desktopMenu.classList.add("inactive");
     shoppingCartContainer.classList.add("inactive");
+    productDetailContainer.classList.add("inactive");
 }
 function toggleIconCarrito() {
     shoppingCartContainer.classList.toggle('inactive');
+    mobileMenu.classList.add("inactive");
+    desktopMenu.classList.add("inactive");
+    productDetailContainer.classList.add("inactive");
+}
+function openProductDetailAside() {
+    productDetailContainer.classList.remove("inactive");
+}
+function closeProductDetailAside() {
+    productDetailContainer.classList.add("inactive");
+    shoppingCartContainer.classList.add("inactive");
+    desktopMenu.classList.add("inactive");
     mobileMenu.classList.add("inactive");
 }
 
@@ -31,24 +48,28 @@ productList.push({
     name:"Bike",
     precio: 120,
     image:"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    descrip: "Esto es la primera prueba"
 });
 productList.push({
     name:"Pantalla",
     precio: 220,
     image:"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    descrip: "Esto es la segunda prueba"
 });
 productList.push({
     name:"Cocina",
     precio: 90,
     image:"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    descrip: "Esto es la tercera prueba"
 });
 productList.push({
     name:"Skate",
     precio: 110,
     image:"https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    descrip: "Esto es la cuarta prueba"
 });
 
-// * Maquetacion html mediante JavaScript
+// * Maquetacion html mediante JavaScript(shoppingCartContainer)
 function renderProducts(arr) {
     for (const producto of productList) {
         const productCard = document.createElement('div');
@@ -56,6 +77,7 @@ function renderProducts(arr) {
 
         const img = document.createElement('img');
         img.setAttribute('src', producto.image);
+        img.addEventListener('click', openProductDetailAside);
 
         const productInfo = document.createElement('div');
         productInfo.classList.add('product-info');
