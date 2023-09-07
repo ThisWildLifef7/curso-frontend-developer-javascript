@@ -91,6 +91,7 @@
     border-radius: 6px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+    transition: 0.4s;
     padding: 20px 20px 0 20px;
     box-shadow: 5px 5px 10px var(--very-light-pink);
     background: var(--white);
@@ -121,7 +122,8 @@
   }
 
   .inactive {
-    display: none;
+    /* display: none; */
+    opacity: 0;
   }
 
   .navbar-email:hover {
