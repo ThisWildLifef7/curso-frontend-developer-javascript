@@ -93,6 +93,7 @@
     border-top-right-radius: 0;
     padding: 20px 20px 0 20px;
     box-shadow: 5px 5px 10px var(--very-light-pink);
+    background: var(--white);
   }
   .desktop-menu ul {
     padding: 0;
