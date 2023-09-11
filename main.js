@@ -69,9 +69,32 @@ productList.push({
     descrip: "Esto es la cuarta prueba"
 });
 
+// * product = {name, price, image} -> product.image
 // * Maquetacion html mediante JavaScript(shoppingCartContainer)
 function renderProducts(arr) {
     for (const producto of productList) {
+        const htmlCards = `<div class="product-card">
+        <img src="${producto.image}" alt="">
+        <div class="product-info">
+          <div>
+            <p>$${producto.precio}</p>
+            <p>${producto.name}</p>
+          </div>
+          <figure>
+            <img src="./icons/bt_add_to_cart.svg" alt="">
+          </figure>
+        </div>
+        </div>`;
+
+        const cardsContainer = document.querySelector('.cards-container')
+        cardsContainer.innerHTML += htmlCards;
+    }
+}
+
+renderProducts(productList);
+
+// ! Comentarios
+/* Otra manera de crear los elementos
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
 
@@ -100,7 +123,4 @@ function renderProducts(arr) {
         productCard.append(img, productInfo);
 
         cardsContainer.appendChild(productCard);
-    }
-}
-
-renderProducts(productList);
+*/

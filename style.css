@@ -188,6 +188,7 @@
   /*shoppingCartContainer*/
   #shoppingCartContainer {
     padding: 10px 24px;
+    transition: 0.4s;
   }
   /*estilos de ShoppingCart*/
   .title-container {
@@ -370,7 +371,7 @@
     color: red;
     transition: 0.1s linear;
   }
-  
+
   @media (max-width: 640px) {
     .menu {
       display: block;
